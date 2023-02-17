@@ -43,16 +43,6 @@ def parse_ner(filename: str, **kwargs) -> pd.DataFrame:
         pd.DataFrame: _description_
     """
 
-    # df = pd.read_csv(filename,
-    #         sep="\t", 
-    #         names=["sentence_id", "words", "labels"],
-    #         engine="python",
-    #         on_bad_lines="skip",
-    #         )
-
-    # d = {label: i for i, label in enumerate(df.sentence_id.unique())}
-    # df["sentence_id"] = df.sentence_id.apply(lambda s: d[s])
-    # return df
     sentence_ids, words, labels = [], [], []
     with open(filename) as f:
         content = f.readlines()
