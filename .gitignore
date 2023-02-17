@@ -2,3 +2,4 @@ runs
 outputs
 models
 cache_dir
+__pycache__
