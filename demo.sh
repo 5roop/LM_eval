@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage:
+
 # python src/finetune_arged.py --help
 # usage: finetune_arged.py [-h] -i TRAIN_FILE -t TEST_FILE -d DEV_FILE -lt LM_TYPE -ln LM_NAME [-s SEED] --task TASK
 #                          [-o OUTPUT_FILE] [-n GPU_N] [-e NUM_TRAIN_EPOCHS] [--lines LINES]
@@ -26,12 +26,15 @@
 #   -e NUM_TRAIN_EPOCHS, --num_train_epochs NUM_TRAIN_EPOCHS
 #                         Train epochs
 #   --lines LINES         How many lines of train data to use
+
+
+# Let's try finetuning on HR NER:
 python src/finetune_arged.py \
     --train_file finetune_data/hr500k-train.ner \
     --dev_file finetune_data/hr500k-dev.ner \
     --test_file finetune_data/hr500k-test.ner \
     --task ner \
     --lm_type roberta \
-    --lm_name models/checkpoint-2500
-    --num_train_epochs 1
+    --lm_name models/checkpoint-5000 \
+    --num_train_epochs 10
 
