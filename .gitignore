@@ -1,5 +1,5 @@
 runs
 outputs
-models
+models/**
 cache_dir
 __pycache__
